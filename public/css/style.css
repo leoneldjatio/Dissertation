@@ -1,0 +1,371 @@
+:root {
+    --btn-height: 40px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #f8f8f8;
+    font-family: sans-serif;
+}
+
+p {
+    font-size: 1em;
+    line-height: 25px;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+
+header {
+    background: #08387F;
+    color: white;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    z-index: 1000;
+    margin-bottom: 60px;
+}
+
+header > .container {
+    display: flex;
+    height: 60px;
+    align-items: center;
+}
+.navbar {
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+}
+
+.navbar img {
+    max-width: 100%;
+    width: 60px;
+    height: 60px;
+}
+
+.navbar > a {
+    margin-left: 10px;
+    font-family: sans-serif;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: .8em;
+    color: steelblue;
+    font-weight: bold;
+    background: white;
+    border: none;
+    border-radius: 4px;
+    transition: all .3s ease-in-out;
+}
+
+.navbar a:hover, .navbar a.active {
+    color: orangered;
+    background: white;
+}
+
+
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.btn {
+    display: inline-block;
+    padding: 6px 20px;
+    text-align: center;
+    font-size: 0.8em;
+    border: none;
+    border-radius: 4px;
+    background: steelblue;
+    color: white !important;
+    height: var(--btn-height);
+    line-height: 30px;
+    cursor: pointer;
+    box-shadow: none;
+    opacity: 1;
+    transition: all 0.4s;
+}
+
+.btn-sm {
+    padding: 4px 10px;
+    height: 30px;
+    line-height: 20px;
+}
+
+.btn-circle {
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: bold;
+}
+
+.btn-success {
+    background: green !important;
+}
+
+.btn-danger {
+    background: orangered;
+}
+
+.btn-primary {
+    background: steelblue !important;
+}
+
+.btn:active,
+.btn:hover {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    opacity: 0.9;
+}
+
+header .logo {
+    font-size: 1em;
+    text-transform: uppercase;
+}
+
+/* home page */
+#hero {
+    background: #3a3939 url("../imgs/phone.jpg") no-repeat center center;
+}
+#hero > .container {
+    display: flex;
+}
+
+#hero .left,
+#hero .right {
+    flex: 1;
+    display: grid;
+    height: 500px;
+    place-items: center;
+}
+
+/* Recent projects */
+
+#recent_projects {
+    position: relative;
+    padding: 70px 0;
+}
+
+#recent_projects .container {
+    width: 1280px;
+}
+
+#recent_projects .slider-container {
+    display: flex;
+    flex: 1;
+    margin-bottom: 30px;
+}
+
+#recent_projects .slide { 
+    /* margin: 0 auto; */
+    flex-basis: 80%;
+    flex-shrink: 0;
+    height: 350px;
+    border: none;
+    border-radius: 8px;
+    margin-right: 30px;
+    background: #d5d5d5;
+    display: flex;
+}
+
+#recent_projects  .slider-container > .card {
+    flex-direction: row;
+}
+#recent_projects .slide .abstract {
+    padding-right: 100px;
+    margin-left: 210px;
+}
+
+#recent_projects .slide .abstract .project-title {
+    margin-bottom: 0;
+    margin-top: 30px;
+}
+
+#recent_projects .slide .project_img {
+    position: absolute;
+    top: 50%;
+    transform: translate(-100px, -50%);
+    max-width: 100%;
+    width: 300px;
+    height: 200px;
+    padding: 4px;
+    border: 1px solid #fff;
+    border-radius: 9px;
+}
+
+#recent_project .slide .abstract p {
+    font-size: 14px;
+    line-height: 40px;
+}
+
+#recent_projects .controls {
+   text-align: center;
+}
+
+#recent_projects .controls .btn-circle{
+    margin: 0 10px;
+ }
+ 
+ #recent_projects .cta button {
+     border-radius: calc(var(--btn-height) / 2);
+     margin-right: 10px;
+ }
+
+ /* login form */
+
+#login-form .forgot-pwd{
+   font-size: 14px;
+}
+
+
+/* Upload page */
+#upload-page .upload {
+    height: 184px;
+    width: 30%;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+    opacity: 1;
+    box-shadow: none;
+    transition: all 0.3s ease-in-out;
+}
+
+#upload-page .upload img {
+    max-width: 100%;
+    width: 80px;
+    height: 80px;
+}
+
+#upload-page .upload:hover,
+#upload-page .upload:active {
+    opacity: .8;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.3);
+}
+
+#upload-page .d-flex {
+    justify-content: space-between;
+}
+
+#upload-page .d-flex > div:nth-child(1) {
+    flex: auto;
+}
+
+#upload-page .btn[type="submit"] {
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+#upload-page .file-btn {
+    position: absolute;
+    clip: rect(0,0,0,0);
+}
+
+/* loged in navbar styling */
+
+.navbar .dropdown {
+    position: relative;
+}
+
+.navbar .dropdown .dropdown-content {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 149px;
+    background: #d5d5d5;
+    border: none;
+    border-radius: 4px;
+    z-index: 1;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.3);
+    transition: all 0.3s ease-in-out;
+    display: none;
+}
+
+.navbar .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    color: #3a3939;
+    font-size: 14px;
+}
+.navbar .profile-image > img {
+    max-width: 100%;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    border: 2px solid #B8FEFA;
+}
+
+
+/* gallery-page styling */
+
+#gallery-page .card {
+    box-shadow: none;
+    transition: all 0.5s;
+}
+
+#gallery-page .card .card-header .card-title {
+    font-size: 20px;
+}
+
+#gallery-page .card .card-header .date-posted {
+    font-size: 10px;
+    line-height: 20px;
+}
+
+#gallery-page .card .card-body {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 120px;
+    position: relative;
+}
+
+#gallery-page .card .card-body .see-more {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background: white;
+    color: orangered;
+    padding: 8px 12px;
+    display: none;
+    box-shadow: -1px -1px 14px rgba(0,0,0,.3);
+}
+
+#gallery-page .card:hover {
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    transform: translateY(-20px);
+}
+
+#gallery-page .add-project {
+    cursor: pointer;
+    height: 269px;
+    display: block;
+    position: relative;
+}
+
+#gallery-page .add-project div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.lightbox {
+    z-index: 2000;
+}
+
+.search .btn {
+    height: 38px;
+}
