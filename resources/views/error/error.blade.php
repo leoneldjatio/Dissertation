@@ -3,6 +3,9 @@
 		<title>Error</title>
 		<link rel="stylesheet" href="{{asset('css/animate.css')}}">
 		<style>
+			:root {
+				--primary: #08387F;
+			}
 			.container {
 				width: 80%;
 				margin: 0 auto;
@@ -34,7 +37,7 @@
 			.btn {
 				display: inline-block;
 				padding: 4px 40px;
-				background: steelblue;
+				background: var(--primary);
 				color: white;
 				text-align: center;
 				text-decoration: none;

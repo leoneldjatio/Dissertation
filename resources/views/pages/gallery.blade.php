@@ -25,12 +25,14 @@
         <div class="row mt-5">
             @if(!Auth::guest())
             <div class="col-md-4 col-lg-3 col-sm-12 mb-3">
-                <a href="{{action('UploadController@upload','')}}"><div class="card text-center add-project">
-                    <div>
-                        <img src="imgs/plus-icon.png" alt="plus icon">
-                        <p>Add a project</p>
+                <a href="{{action('UploadController@upload','')}}">
+                    <div class="card text-center add-project">
+                        <div>
+                            <img src="imgs/plus-icon.png" alt="plus icon">
+                            <p>Add a project</p>
+                        </div>
                     </div>
-                    </div></a>
+                </a>
 
                 <div class="mt-3">
                    <hr>

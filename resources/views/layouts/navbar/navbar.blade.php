@@ -1,17 +1,19 @@
 @section('navbar')
     <header>
         <div class="container">
-            <a href="/"><img src="{{asset('imgs/UBAlogo.png')}}" style="max-width: 100%; width: 50px; height: 50px; margin-right: 10px;"></a>
+            <a href="/"><img src="{{asset('imgs/bam.png')}}" style="max-width: 100%; width: 50px; height: 50px; margin-right: 10px;"></a>
             <h1 class="logo"> UBa ETD</h1>
-            <form action="/search" method="GET" role="search" style="padding-left: 10px;padding-top: 4px">
+            <form action="/search" method="GET" class="ml-5" role="search" style="padding-left: 10px;padding-top: 4px">
                 {{ csrf_field() }}
-                <div class="input-group">
+
+                <div class="input-group search">
                     <input type="text" class="form-control" name="query"
-                           placeholder="Search projects"> <span class="input-group-btn">
-            <button type="submit" class="btn btn-default">
-                <i class="fa fa-search"></i>
-            </button>
-        </span>
+                           placeholder="Search projects"> 
+                    <div class="input-group-append"> 
+                        <button type="submit" class="btn input-group-text">
+                            <i class="fa fa-search text-white"></i>
+                        </button>
+                    </div>
                 </div>
             </form>
             <nav class="navbar">

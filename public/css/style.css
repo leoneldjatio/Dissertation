@@ -1,5 +1,6 @@
 :root {
     --btn-height: 40px;
+    --primary: #08387F;
 }
 
 body {
@@ -84,7 +85,7 @@ header > .container {
     font-size: 0.8em;
     border: none;
     border-radius: 4px;
-    background: steelblue;
+    background: var(--primary);
     color: white !important;
     height: var(--btn-height);
     line-height: 30px;
@@ -119,7 +120,7 @@ header > .container {
 }
 
 .btn-primary {
-    background: steelblue !important;
+    background: var(--primary);
 }
 
 .btn:active,
@@ -131,6 +132,15 @@ header > .container {
 header .logo {
     font-size: 1em;
     text-transform: uppercase;
+}
+
+.navbar .btn {
+    --primary: steelblue;
+    background: var(--primary);
+}
+
+.navbar .btn-primary:hover {
+    background: var(--primary);
 }
 
 /* home page */
@@ -229,8 +239,14 @@ header .logo {
 
 
 /* Upload page */
+
+#upload-page form {
+    box-shadow: 0 1px 5px rgba(0,0,0,0.3);
+    background: #f8f8f8;
+}
+
 #upload-page .upload {
-    height: 184px;
+    height: 176px;
     width: 30%;
     display: grid;
     place-items: center;
@@ -240,6 +256,8 @@ header .logo {
     opacity: 1;
     box-shadow: none;
     transition: all 0.3s ease-in-out;
+    background: #08387F;
+    color: white;
 }
 
 #upload-page .upload img {
@@ -250,7 +268,7 @@ header .logo {
 
 #upload-page .upload:hover,
 #upload-page .upload:active {
-    opacity: .8;
+    opacity: .94;
     box-shadow: 0 1px 5px rgba(0,0,0,0.3);
 }
 
@@ -272,6 +290,10 @@ header .logo {
     clip: rect(0,0,0,0);
 }
 
+#upload-page .back {
+    background: #08387F;
+}
+
 /* loged in navbar styling */
 
 .navbar .dropdown {
@@ -280,8 +302,8 @@ header .logo {
 
 .navbar .dropdown .dropdown-content {
     position: absolute;
-    top: 60px;
-    left: 0;
+    top: 40px;
+    right: -50px;
     width: 149px;
     background: #d5d5d5;
     border: none;
@@ -302,11 +324,16 @@ header .logo {
 }
 .navbar .profile-image > img {
     max-width: 100%;
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     box-sizing: border-box;
     border: 2px solid #B8FEFA;
+}
+
+.navbar .dropdown-btn:hover {
+    cursor: pointer;
+    background: none;
 }
 
 
@@ -319,6 +346,7 @@ header .logo {
 
 #gallery-page .card .card-header .card-title {
     font-size: 20px;
+    text-transform: uppercase;
 }
 
 #gallery-page .card .card-header .date-posted {
@@ -359,6 +387,7 @@ header .logo {
     height: 269px;
     display: block;
     position: relative;
+    text-align: center
 }
 
 #gallery-page .add-project div {
@@ -373,5 +402,13 @@ header .logo {
 }
 
 .search .btn {
+    --primary: steelblue;
     height: 38px;
+    background: var(--primary);
+}
+
+/*media queries*/
+
+@media screen(max-width: 900) {
+
 }
