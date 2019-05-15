@@ -33,37 +33,43 @@
                     </div></a>
 
                 <div class="mt-3">
-                   <p class="text-danger">Search by</p>
-                    <ul class="list-group">
-                        <li class="list-group-item">All projects</li>
-                        <li class="list-group-item">Authors</li>
-                        <li class="list-group-item">School</li>
-                        <li class="list-group-item">Department</li>
-                        <li class="list-group-item">Subject</li>
-                    </ul>
-
-                    <ul class="list-group mt-3 list-group-primary">
-                        <li class="list-group-item list-group-item-primary text-success">BSc Dissertations <span class="label">2</span></li>
-                        <li class="list-group-item">MSc Disserations</li>
-                        <li class="list-group-item">PhD Disserations</li>
-                    </ul>
+                   <hr>
+                   <h4>Advanced Search</h4>
+                    <form action="" class="form border py-3 px-2 rounded bg-white">
+                        <div class="form-group">
+                            <label for="school">School or Faculty</label>
+                            <input list="schools" name="school" id="school" class="form-control" placeholder="Start typing">
+                            <datalist id="schools">
+                                <option value="HTTC">Higher Teachers Traning College</option>
+                                <option value="HTTTC">Higher Technical Teachers Traning College</option>
+                                <option value="HICM">Higher Institute of Commerce and Management</option>
+                                <option value="FS">Faculty of Science</option>
+                                <option value="FA">Faculty of Arts</option>
+                            </datalist>
+                        </div>
+                        <div class="form-group">
+                            <label for="department">Department</label>
+                            <input list="departments" name="department" id="department" class="form-control" placeholder="Start typing">
+                            <datalist id="departments">
+                                <option value="Econs">Economics</option>
+                                <option value="Mgt">Management and accounting</option>
+                                <option value="MKt">Marketting</option>
+                                <option value="BF">Banking and Finance</option>
+                                <option value="FA">Faculty of Arts</option>
+                            </datalist>
+                        </div>
+                        <input type="submit" name="advanced-search" class="form-control btn btn-primary" value="Search now">
+                    </form>
                 </div>
             </div>
 
             @else
                 <div class="col-md-3">
                    <p>Search by</p>
-                    <ul class="list-group">
-                        <li class="list-group-item">Authors</li>
-                        <li class="list-group-item">School</li>
-                        <li class="list-group-item">Department</li>
-                        <li class="list-group-item">Subject</li>
-                    </ul>
-
-                    <ul class="list-group mt-3 list-group-primary">
-                        <li class="list-group-item list-group-item-primary text-success">BSc Dissertations <span class="label">2</span></li>
-                        <li class="list-group-item">MSc Disserations</li>
-                        <li class="list-group-item">PhD Disserations</li>
+                     <ul class="list-group">
+                        <a href="#" class="list-group-item list-group-item-action">School</a>
+                        <a href="#" class="list-group-item list-group-item-action">Department</a>
+                        <a href="#" class="list-group-item list-group-item-action">Date</a>
                     </ul>
                 </div>
 
@@ -71,7 +77,7 @@
             <div class="col-md-9">
                 <div class="row">
             @foreach( $theses as $thesis)
-            <div class="col-md-12 mb-3">
+            <div class="col-md-10 col-lg-12 mb-3">
                 <div class="card">
                     <div class="card-header">
                         <h3 class="card-title">{{$thesis->title}}<br><span class="date-posted">{{$thesis->created_at}}</span></h3>
@@ -83,23 +89,26 @@
                         </p>
 
                     </div>
-                    <div class=" card-footer">
+                    <div class=" card-footer d-flex align-items-center">
                         <div class="row">
                             @if(!Auth::guest())
-                        <form action="{{url($thesis->file_name)}}">
-                            <button class=" btn btn-success btn-sm ml-3">
-                                <i class="fa fa-download"> Download</i></button>
-                        </form>
-                        </a>
+                            <form action="{{url($thesis->file_name)}}">
+                                <button class=" btn btn-success btn-sm ml-3">
+                                    <i class="fa fa-download"> Download</i></button>
+                            </form>
                             @endif
-                                <button data-file="{{url($thesis->file_name)}}" href="#" class=" btn btn-info btn-sm ml-3 view">
-                                    <i class="fa fa-eye"> View</i>
-                                </button>
-                                @if(!Auth::guest())
-                                <button data-target="#delete" data-toggle="modal" class="delete-modal btn btn-danger btn-sm  ml-3" data-id="{{$thesis->thesis_id}}">
-                                    <i class="fa fa-trash"> Drop</i>
-                                </button>
-                                    @endif
+                            <button data-file="{{url($thesis->file_name)}}" href="#" class=" btn btn-info btn-sm ml-3 view">
+                                <i class="fa fa-eye"> View</i>
+                            </button>
+                            @if(!Auth::guest())
+                            <button data-target="#delete" data-toggle="modal" class="delete-modal btn btn-danger btn-sm  ml-3" data-id="{{$thesis->thesis_id}}">
+                                <i class="fa fa-trash"> Drop</i>
+                            </button>
+                            @endif
+                        </div>
+                        <div class="metadata ml-auto align-self-end text-right d-flex flex-column">
+                            <span class="text-dark">{{$thesis->faculty_name}}</span>
+                            <span class="text-info">{{$thesis->department_name}}</span>
                         </div>
                     </div>
 

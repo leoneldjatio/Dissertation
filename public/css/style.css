@@ -5,7 +5,8 @@
 body {
     margin: 0;
     padding: 0;
-    background: #f8f8f8;
+    background: #f8f8f8 url("../imgs/greybg.jpg") repeat;
+};
     font-family: sans-serif;
 }
 
@@ -341,6 +342,11 @@ header .logo {
     padding: 8px 12px;
     display: none;
     box-shadow: -1px -1px 14px rgba(0,0,0,.3);
+}
+
+#gallery-page .card .card-footer .metadata {
+    font-size: 12px;
+    font-weight: bold;
 }
 
 #gallery-page .card:hover {
