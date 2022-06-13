@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('css/animate.css') }}" rel="stylesheet">
+    <script src="vendors/bower_components/jquery/dist/jquery.min.js"></script>
 
 </head>
 <body>
@@ -38,7 +39,7 @@
         @yield('content')
     </main>
 </div>
-<script src="{{ asset('js/jquery.min.js') }}" ></script>
+<script src="{{ asset('vendors/bower_components/jquery/dist/jquery.min.js') }}" ></script>
 <!--<script src="{{ asset('js/app.js') }}" ></script>-->
 <script src="{{ asset('js/bootstrap.js') }}"></script>
 <script src="{{ asset('js/dropdown.js') }}" ></script>
@@ -59,6 +60,24 @@
         var thesis_id = button.data('id')
         var modal = $(this)
         modal.find('.modal-body #SearchDel').val(thesis_id)
+    });
+</script>
+<script type="text/javascript">
+    $('#view').on('show.bs.modal',function (event) {
+        var button = $(event.relatedTarget)
+        var thesis_id = button.data('id')
+        var modal = $(this)
+        modal.find('.modal-body #frame1').attr("src", thesis_id + "#toolbar=0")
+    });
+    $('#view').on('contextmenu', function(e) {
+        return false;
+    });
+
+    $('#view').on('show.bs.modal',function (event) {
+        var button = $(event.relatedTarget)
+        var title = button.data('name')
+        var modal = $(this)
+        modal.find('.modal-title').html(title)
     });
 </script>
 </body>

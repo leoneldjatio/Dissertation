@@ -135,8 +135,9 @@
 
         .logo > img {
             max-width: 100%;
-            height: auto;
-            flex-basis: 100px;
+            width: 120px;
+            height: 120px;
+            flex-basis: 120px;
         }
         
         .logo h2 {
@@ -180,15 +181,15 @@
             @endif
 
             <div class="content text-center text-white">
-                <div class="title mb-0">UBa Electronic Thesis and Dissertations (ETD)</div>
-                <h2 class="lead mt-0 mb-0">A great amount of knowledge available for you like never before.</h2>
+                <div class="title mb-0">UBa Electronic Theses and Dissertations (ETDs)</div>
+                <h2 class="lead mt-0 mb-0">A great amount of knowledge available to you like never before.</h2>
                 <a href="{{ action('GalleryController@create'), '' }}"><button class="btn">Browse Projects</button></a>
                 <a href="#learn-more" class="btn btn-danger">Learn More</a>
             </div>
         </div>
             <div id="learn-more" class="container full-height">
                 <div class="jumbotron">
-                    <h1 class="text-center title">About UBa ETD</h1>
+                    <h1 class="text-center title">About UBa ETDs</h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis in, impedit quae, a mollitia libero et accusantium quam beatae veniam dolorum rem dolorem. Ipsam rerum est consectetur, veritatis non totam.</p>
                 </div>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit quo unde dolorem aspernatur, animi, perspiciatis iure aperiam. Fugiat, provident, maiores illum, sunt minus at quisquam ullam modi, magnam ipsa ut.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui voluptate architecto suscipit. Voluptate ipsam dolor vel, ex, dolores maiores modi fugiat doloremque saepe reiciendis non? Fuga odio ipsa expedita accusamus.<b>Lorem ipsum dolor sit amet</b> consectetur adipisicing elit. Maiores quisquam eos possimus repellat beatae maxime aspernatur consectetur, distinctio reiciendis dolorem earum non dolor inventore, assumenda, itaque ab. Vel, <em>nostrum</em>, similique.</p>

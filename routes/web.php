@@ -18,6 +18,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/gallery','GalleryController@create');
+Route::get('/advanceSearch','GalleryController@department');
+Route::get('/advanceSearch2','GalleryController@advanceSearch');
 Route::DELETE('/delete','GalleryController@destroy');
 
 Route::get('logout', 'Auth\LoginController@logout');

@@ -13,11 +13,11 @@ class SearchController extends Controller
             $query = $request->get('query');
        // $department = DB::table('department')->where('department_name',$query)->get();
             if($query != ''){
-               $data = DB::table('theses')
+               $theses = DB::table('theses')
                    ->where('author','like','%'.$query.'%')
                    ->orwhere('title', 'like', '%'.$query.'%')
                    ->orWhere('supervisor','like','%'.$query.'%')
-                   ->orWhere('category_name','like','%'.$query.'%')
+                   //->orWhere('category_name','like','%'.$query.'%')
                    ->orWhere('faculty_name','like','%'.$query.'%')
                    ->orWhere('department_name','like','%'.$query.'%')
                    ->orWhere('created_at','like','%'.$query.'%')
@@ -27,17 +27,20 @@ class SearchController extends Controller
 
             }
             else{
-                $data = DB::table('theses')
+                $theses = DB::table('theses')
                     ->orderBy('created_at', 'desc')
                     ->paginate(10);
             }
-        $noResults = $data;
+        $noResults = $theses;
         if($noResults->isEmpty()){
 
             return view('error.error', compact('query'));
         }
         else {
-            return view('pages.search', compact('data'));
+            $faculties = DB::table('faculties')->orderBy('faculty_name')->get();
+            $departments = DB::table('departments')->get();
+
+            return view('pages.gallery',compact("theses","faculties","departments"));
         }
     }
 

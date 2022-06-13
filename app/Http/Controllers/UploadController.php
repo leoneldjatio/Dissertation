@@ -14,9 +14,9 @@ class UploadController extends Controller
     }
 
     public function upload() {
-        $faculties = DB::table('faculties')->get();
-        $departments = DB::table('departments')->get();
-        $categories = DB::table('categories')->get();
+        $faculties = DB::table('faculties')->orderBy('faculty_name')->get();
+        $departments = DB::table('departments')->orderBy('department_name')->get();
+        $categories = DB::table('categories')->orderBy('category_name')->get();
         return view('pages.upload',compact("faculties",'departments','categories'));
     }
 
@@ -32,6 +32,7 @@ class UploadController extends Controller
             'number_of_pages',
             'options_options_id',
             'faculties_faculty_id',
+            'year'
 
         ]);
 
@@ -53,11 +54,12 @@ class UploadController extends Controller
             $thesis->number_of_pages = request('number_of_pages');
             $thesis->department_name = request('department_name');
             $thesis->faculty_name = request('faculty_name');
+            $thesis->year = request('year');
 
 
             $thesis->save();
         }
-        return redirect('gallery');
+        return redirect('/gallery')->with('success','Thesis Successfully Uploaded');
     }
 
 }

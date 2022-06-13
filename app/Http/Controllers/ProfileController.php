@@ -36,6 +36,6 @@ class ProfileController extends Controller
 
         User::find($id)->update($input);
 
-       return redirect('gallery');
+        return redirect('/gallery')->with('success','Profile Successfully Updated');
     }
 }
